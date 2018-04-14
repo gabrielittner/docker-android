@@ -15,18 +15,18 @@ RUN groupadd -r ${username} && \
     useradd --create-home -r -g ${username} ${username}
 USER ${username}
 
-# Android SDK args
+# Android SDK location
 ARG android_home=/home/${username}/android-sdk
-ARG sdk_version=sdk-tools-linux-4333796.zip
-ARG sdk_license="8933bad161af4178b1185d1a37fbf41ea5269c55\nd56f5187479451eabf01fb78af6dfcb131a6481e"
-ARG sdk_license_preview="84831b9409646a918e30573bab4c9c91346d8abd"
 
 # Accept Android SDK licenses
+ARG sdk_license="8933bad161af4178b1185d1a37fbf41ea5269c55\nd56f5187479451eabf01fb78af6dfcb131a6481e"
+ARG sdk_license_preview="84831b9409646a918e30573bab4c9c91346d8abd"
 RUN mkdir -p "${android_home}/licenses" && \
     echo ${sdk_license} > "${android_home}/licenses/android-sdk-license" && \
     echo ${sdk_license_preview} > "${android_home}/licenses/android-sdk-preview-license"
 
 # Download and install Android SDK
+ARG sdk_version=sdk-tools-linux-4333796.zip
 RUN mkdir -p ${android_home} && \
     curl --silent --show-error --location --fail --retry 3 --output /tmp/${sdk_version} https://dl.google.com/android/repository/${sdk_version} && \
     unzip -q /tmp/${sdk_version} -d ${android_home} && \
