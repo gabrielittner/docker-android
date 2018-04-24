@@ -1,11 +1,19 @@
-FROM openjdk:8-jdk
+FROM openjdk:8-jdk-alpine
 
 LABEL maintainer="gabriel.ittner@gmail.com"
 
+# Install dependencies
+# git and openssh-client for CircleCI
+# glibc from https://github.com/sgerrand/alpine-pkg-glibc/issues/1#issuecomment-251170697
+RUN apk --no-cache add ca-certificates git openssh-client && \
+    wget -q -O /etc/apk/keys/sgerrand.rsa.pub https://raw.githubusercontent.com/sgerrand/alpine-pkg-glibc/master/sgerrand.rsa.pub && \
+    apk --no-cache -X https://apkproxy.herokuapp.com/sgerrand/alpine-pkg-glibc add glibc glibc-bin && \
+    rm -f /etc/apk/keys/sgerrand.rsa.pub
+
 # Create new user
 ARG username=worker
-RUN groupadd -r ${username} && \
-    useradd --create-home -r -g ${username} ${username}
+RUN addgroup ${username} && \
+    adduser -D -G ${username} ${username}
 USER ${username}
 
 # Android SDK location
