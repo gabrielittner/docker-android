@@ -1,4 +1,4 @@
-FROM openjdk:10-jdk
+FROM openjdk:10.0.1-10-jdk
 
 LABEL maintainer="gabriel.ittner@gmail.com"
 
