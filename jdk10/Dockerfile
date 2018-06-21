@@ -1,4 +1,5 @@
-FROM openjdk:10.0.1-10-jdk
+ARG JDK_VERSION=none
+FROM openjdk:${JDK_VERSION}
 
 LABEL maintainer="gabriel.ittner@gmail.com"
 
