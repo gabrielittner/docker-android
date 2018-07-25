@@ -15,12 +15,10 @@ All images are based on different OpenJDK images from [https://hub.docker.com/_/
 OpenJDK 8 (8u171):
 - `tools-26.1.1-jdk8u171`
 - `tools-26.1.1-jdk8`
-- `tools-26.1.1`
 
 Alpine Linux OpenJDK 8 (8u171):
 - `tools-26.1.1-jdk8u171-alpine`
 - `tools-26.1.1-jdk8-alpine`
-- `tools-26.1.1-alpine`
 
 OpenJDK 10 (10.0.1-10):
 - `tools-26.1.1-jdk10.0.1-10`

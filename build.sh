@@ -1,35 +1,30 @@
 #!/bin/bash
 set -e
 
-TAG_BASE=gabrielittner/android-sdk:tools-26.1.1
+SDK_TOOLS_VERSION=26.1.1
+SDK_TOOLS_REVISION=4333796
 
-VERSIONS=( 8 8-alpine 10 )
+VERSIONS_SHORT=( 8 8-alpine 10 )
 VERSIONS_FULL=( 8u171 8u171-alpine 10.0.1-10 )
 
-DEFAULT_VERSION=8
-DEFAULT_VERSION_ALPINE=8-alpine
+TAG_BASE=gabrielittner/android-sdk:tools-${SDK_TOOLS_VERSION}
 
-for ((i=0;i<${#VERSIONS[@]};++i)); do
-    TAG_SIMPLE=${TAG_BASE}-jdk${VERSIONS[i]}
+docker build \
+    --pull \
+    --tag android-sdk-tools \
+    --build-arg SDK_TOOLS_REVISION=${SDK_TOOLS_REVISION} \
+    sdk-tools
+
+for ((i=0;i<${#VERSIONS_SHORT[@]};++i)); do
+    TAG_SIMPLE=${TAG_BASE}-jdk${VERSIONS_SHORT[i]}
     TAG_FULL=${TAG_BASE}-jdk${VERSIONS_FULL[i]}
     
     docker build \
-        --pull \
         --tag ${TAG_SIMPLE} \
         --tag ${TAG_FULL} \
         --build-arg JDK_VERSION=${VERSIONS_FULL[i]} \
-        jdk${VERSIONS[i]}
+        jdk${VERSIONS_SHORT[i]}
     
-    if [ "${VERSIONS[i]}" == "${DEFAULT_VERSION}" ]; then
-        docker tag ${TAG_FULL} ${TAG_BASE} 
-        docker push ${TAG_BASE} 
-    fi
-    
-    if [ "${VERSIONS[i]}" == "${DEFAULT_VERSION_ALPINE}" ]; then
-        docker tag ${TAG_FULL} ${TAG_BASE}-alpine
-        docker push ${TAG_BASE}-alpine
-    fi
-
     docker push ${TAG_SIMPLE}
     docker push ${TAG_FULL}
 done
