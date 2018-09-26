@@ -7,14 +7,14 @@ SDK_TOOLS_REVISION=4333796
 VERSIONS_SHORT=( 8 8-alpine 10 11 )
 VERSIONS_FULL=( 8u181 8u171-alpine 10.0.2-13 11-ea-28)
 
-TAG_BASE=gabrielittner/android-sdk:tools-${SDK_TOOLS_VERSION}
-
+SDK_TOOLS_IMAGE=android-sdk-tools-${SDK_TOOLS_VERSION}
 docker build \
     --pull \
-    --tag android-sdk-tools \
+    --tag ${SDK_TOOLS_IMAGE} \
     --build-arg SDK_TOOLS_REVISION=${SDK_TOOLS_REVISION} \
     sdk-tools
 
+TAG_BASE=gabrielittner/android-sdk:tools-${SDK_TOOLS_VERSION}
 for ((i=0;i<${#VERSIONS_SHORT[@]};++i)); do
     TAG_SIMPLE=${TAG_BASE}-jdk${VERSIONS_SHORT[i]}
     TAG_FULL=${TAG_BASE}-jdk${VERSIONS_FULL[i]}
@@ -22,6 +22,7 @@ for ((i=0;i<${#VERSIONS_SHORT[@]};++i)); do
     docker build \
         --tag ${TAG_SIMPLE} \
         --tag ${TAG_FULL} \
+        --build-arg SDK_TOOLS_IMAGE=${SDK_TOOLS_IMAGE} \
         --build-arg JDK_VERSION=${VERSIONS_FULL[i]} \
         jdk${VERSIONS_SHORT[i]}
 
