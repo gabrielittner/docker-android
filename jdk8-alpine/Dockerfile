@@ -19,7 +19,7 @@ USER ${username}
 
 # Android SDK
 ARG android_home=/home/${username}/android-sdk
-COPY --from=android-sdk-tools /android-sdk ${android_home}
+COPY --chown=worker --from=android-sdk-tools /android-sdk ${android_home}
 
 # Set environmental variables
 ENV ANDROID_HOME ${android_home}
