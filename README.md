@@ -25,5 +25,9 @@ OpenJDK 10:
 - `tools-26.1.1-jdk10`
 
 OpenJDK 11:
+- `tools-26.1.1-jdk11.0.1`
 - `tools-26.1.1-jdk11`
-- `tools-26.1.1-jdk11`
+
+OpenJDK 12:
+- `tools-26.1.1-jdk12-ea-16`
+- `tools-26.1.1-jdk12`
