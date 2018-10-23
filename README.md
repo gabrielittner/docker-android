@@ -17,7 +17,7 @@ OpenJDK 8:
 - `tools-26.1.1-jdk8`
 
 Alpine Linux OpenJDK 8:
-- `tools-26.1.1-jdk8u171-alpine`
+- `tools-26.1.1-jdk8u181-alpine`
 - `tools-26.1.1-jdk8-alpine`
 
 OpenJDK 10:

@@ -5,7 +5,7 @@ SDK_TOOLS_VERSION=26.1.1
 SDK_TOOLS_REVISION=4333796
 
 VERSIONS_SHORT=( 8 8-alpine 10 11 12 )
-VERSIONS_FULL=( 8u181 8u171-alpine 10.0.2 11.0.1 12-ea-16)
+VERSIONS_FULL=( 8u181 8u181-alpine 10.0.2 11.0.1 12-ea-16)
 
 SDK_TOOLS_IMAGE=android-sdk-tools-${SDK_TOOLS_VERSION}
 echo "================================================"

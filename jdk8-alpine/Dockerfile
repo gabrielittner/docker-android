@@ -9,10 +9,11 @@ LABEL maintainer="gabriel.ittner@gmail.com"
 
 # Install dependencies
 # git and openssh-client for CircleCI
-# glibc from https://github.com/sgerrand/alpine-pkg-glibc/issues/1#issuecomment-251170697
+# glibc from https://github.com/sgerrand/alpine-pkg-glibc/
 RUN apk --no-cache add ca-certificates git openssh-client && \
-    wget -q -O /etc/apk/keys/sgerrand.rsa.pub https://raw.githubusercontent.com/sgerrand/alpine-pkg-glibc/master/sgerrand.rsa.pub && \
-    apk --no-cache -X https://apkproxy.herokuapp.com/sgerrand/alpine-pkg-glibc add glibc glibc-bin && \
+    wget -q -O /etc/apk/keys/sgerrand.rsa.pub https://alpine-pkgs.sgerrand.com/sgerrand.rsa.pub && \
+    wget https://github.com/sgerrand/alpine-pkg-glibc/releases/download/2.28-r0/glibc-2.28-r0.apk && \
+    apk --no-cache add glibc-2.28-r0.apk && \
     rm -f /etc/apk/keys/sgerrand.rsa.pub
 
 # Create new user
