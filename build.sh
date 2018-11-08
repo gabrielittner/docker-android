@@ -16,13 +16,13 @@ TAG_VERSION_FULL=(
   jdk8u181
   jdk8u181-alpine
   jdk11.0.1
-  jdk12-ea-16
+  jdk12-ea-20
 )
 JDK_IMAGE=(
   openjdk:8u181
   openjdk:8u181-alpine
   openjdk:11.0.1
-  openjdk:12-ea-16
+  openjdk:12-ea-20
 )
 
 SDK_TOOLS_IMAGE=android-sdk-tools-${SDK_TOOLS_VERSION}

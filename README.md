@@ -25,7 +25,7 @@ OpenJDK 11:
 - `tools-26.1.1-jdk11`
 
 OpenJDK 12:
-- `tools-26.1.1-jdk12-ea-16`
+- `tools-26.1.1-jdk12-ea-20`
 - `tools-26.1.1-jdk12`
 
 Older images can be found [on Docker Hub](https://hub.docker.com/r/gabrielittner/android-sdk/tags/).
