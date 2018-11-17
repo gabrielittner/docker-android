@@ -11,18 +11,30 @@ TAG_VERSION_SHORT=(
   jdk8-alpine
   jdk11
   jdk12
+  adoptjdk8
+  adoptjdk8-alpine
+  adoptjdk11
+  adoptjdk11-alpine
 )
 TAG_VERSION_FULL=(
   jdk8u181
   jdk8u181-alpine
   jdk11.0.1
   jdk12-ea-20
+  adoptjdk8u192
+  adoptjdk8u192-alpine
+  adoptjdk11.0.1
+  adoptjdk11.0.1-alpine
 )
 JDK_IMAGE=(
   openjdk:8u181
   openjdk:8u181-alpine
   openjdk:11.0.1
   openjdk:12-ea-20
+  adoptopenjdk/openjdk8:jdk8u192-b12
+  adoptopenjdk/openjdk8:jdk8u192-b12-alpine
+  adoptopenjdk/openjdk11:jdk-11.0.1.13
+  adoptopenjdk/openjdk11:jdk-11.0.1.13-alpine
 )
 
 SDK_TOOLS_IMAGE=android-sdk-tools-${SDK_TOOLS_VERSION}
