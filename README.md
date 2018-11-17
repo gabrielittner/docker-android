@@ -20,10 +20,6 @@ Alpine Linux OpenJDK 8:
 - `tools-26.1.1-jdk8u181-alpine`
 - `tools-26.1.1-jdk8-alpine`
 
-OpenJDK 10:
-- `tools-26.1.1-jdk10.0.2`
-- `tools-26.1.1-jdk10`
-
 OpenJDK 11:
 - `tools-26.1.1-jdk11.0.1`
 - `tools-26.1.1-jdk11`
@@ -31,3 +27,5 @@ OpenJDK 11:
 OpenJDK 12:
 - `tools-26.1.1-jdk12-ea-16`
 - `tools-26.1.1-jdk12`
+
+Older images can be found [on Docker Hub](https://hub.docker.com/r/gabrielittner/android-sdk/tags/).
