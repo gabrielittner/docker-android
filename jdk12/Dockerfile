@@ -1,9 +1,9 @@
 ARG SDK_TOOLS_IMAGE=none
-ARG JDK_VERSION=none
+ARG JDK_IMAGE=none
 
 FROM ${SDK_TOOLS_IMAGE} as android-sdk-tools
 
-FROM openjdk:${JDK_VERSION}
+FROM ${JDK_IMAGE}
 
 LABEL maintainer="gabriel.ittner@gmail.com"
 
