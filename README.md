@@ -25,7 +25,7 @@ OpenJDK 11:
 - `tools-26.1.1-jdk11`
 
 OpenJDK 12:
-- `tools-26.1.1-jdk12-ea-20`
+- `tools-26.1.1-jdk12-ea-22`
 - `tools-26.1.1-jdk12`
 
 AdoptOpenJDK 8:
