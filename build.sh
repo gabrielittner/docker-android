@@ -23,10 +23,10 @@ TAG_VERSION_FULL=(
   jdk11.0.2
   jdk12-ea-30
   jdk13-ea-3
-  adoptjdk8u192
-  adoptjdk8u192-alpine
-  adoptjdk11.0.1
-  adoptjdk11.0.1-alpine
+  adoptjdk8u202
+  adoptjdk8u202-alpine
+  adoptjdk11.0.2
+  adoptjdk11.0.2-alpine
 )
 JDK_IMAGE=(
   openjdk:8u181
@@ -34,10 +34,10 @@ JDK_IMAGE=(
   openjdk:11.0.2
   openjdk:12-ea-30
   openjdk:13-ea-7
-  adoptopenjdk/openjdk8:jdk8u192-b12
-  adoptopenjdk/openjdk8:jdk8u192-b12-alpine
-  adoptopenjdk/openjdk11:jdk-11.0.1.13
-  adoptopenjdk/openjdk11:jdk-11.0.1.13-alpine
+  adoptopenjdk/openjdk8:jdk8u202-b08
+  adoptopenjdk/openjdk8:jdk8u202-b08-alpine
+  adoptopenjdk/openjdk11:jdk-11.0.2.9
+  adoptopenjdk/openjdk11:jdk-11.0.2.9-alpine
 )
 
 SDK_TOOLS_IMAGE=android-sdk-tools-${SDK_TOOLS_VERSION}

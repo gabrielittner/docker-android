@@ -33,19 +33,19 @@ OpenJDK 13:
 - `tools-26.1.1-jdk13`
 
 AdoptOpenJDK 8:
-- `tools-26.1.1-adoptjdk8u192`
+- `tools-26.1.1-adoptjdk8u202`
 - `tools-26.1.1-adoptjdk8`
 
 AdoptOpenJDK 8 Alpine Linux:
-- `tools-26.1.1-adoptjdk8u192-alpine`
+- `tools-26.1.1-adoptjdk8u202-alpine`
 - `tools-26.1.1-adoptjdk8-alpine`
 
 AdoptOpenJDK 11:
-- `tools-26.1.1-adoptjdk11.0.1`
+- `tools-26.1.1-adoptjdk11.0.2`
 - `tools-26.1.1-adoptjdk11`
 
 AdoptOpenJDK 11 Alpine Linux:
-- `tools-26.1.1-adoptjdk11.0.1-alpine`
+- `tools-26.1.1-adoptjdk11.0.2-alpine`
 - `tools-26.1.1-adoptjdk11-alpine`
 
 Older images can be found [on Docker Hub](https://hub.docker.com/r/gabrielittner/android-sdk/tags/).
