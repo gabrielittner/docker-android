@@ -10,8 +10,6 @@ TAG_VERSION_SHORT=(
   jdk8
   jdk8-alpine
   jdk11
-  jdk12
-  jdk13
   adoptjdk8
   adoptjdk8-alpine
   adoptjdk11
@@ -21,8 +19,6 @@ TAG_VERSION_FULL=(
   jdk8u181
   jdk8u191-alpine
   jdk11.0.2
-  jdk12-ea-30
-  jdk13-ea-3
   adoptjdk8u202
   adoptjdk8u202-alpine
   adoptjdk11.0.2
@@ -32,8 +28,6 @@ JDK_IMAGE=(
   openjdk:8u181
   openjdk:8u191-alpine
   openjdk:11.0.2
-  openjdk:12-ea-30
-  openjdk:13-ea-7
   adoptopenjdk/openjdk8:jdk8u202-b08
   adoptopenjdk/openjdk8:jdk8u202-b08-alpine
   adoptopenjdk/openjdk11:jdk-11.0.2.9
