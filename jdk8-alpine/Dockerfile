@@ -33,15 +33,9 @@ RUN apk --update --no-cache add ca-certificates git openssh-client curl openssl 
     && apk del binutils \
     && rm -rf /tmp/${GLIBC_VER}.apk /tmp/gcc /tmp/gcc-libs.tar.xz /tmp/libz /tmp/libz.tar.xz /var/cache/apk/*
 
-# Create new user
-ARG username=worker
-RUN addgroup ${username} && \
-    adduser -D -G ${username} ${username}
-USER ${username}
-
 # Android SDK
-ARG android_home=/home/${username}/android-sdk
-COPY --chown=worker --from=android-sdk-tools /android-sdk ${android_home}
+ARG android_home=$HOME/android-sdk
+COPY --from=android-sdk-tools /android-sdk ${android_home}
 
 # Set environmental variables
 ENV ANDROID_HOME ${android_home}

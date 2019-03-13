@@ -7,15 +7,9 @@ FROM ${JDK_IMAGE}
 
 LABEL maintainer="gabriel.ittner@gmail.com"
 
-# Create new user
-ARG username=worker
-RUN groupadd -r ${username} && \
-    useradd --create-home -r -g ${username} ${username}
-USER ${username}
-
 # Android SDK
-ARG android_home=/home/${username}/android-sdk
-COPY --chown=worker --from=android-sdk-tools /android-sdk ${android_home}
+ARG android_home=$HOME/android-sdk
+COPY --from=android-sdk-tools /android-sdk ${android_home}
 
 # Set environmental variables
 ENV ANDROID_HOME ${android_home}
