@@ -5,8 +5,6 @@ FROM ${SDK_TOOLS_IMAGE} as android-sdk-tools
 
 FROM ${JDK_IMAGE}
 
-LABEL maintainer="gabriel.ittner@gmail.com"
-
 # Android SDK
 ARG android_home=$HOME/android-sdk
 COPY --from=android-sdk-tools /android-sdk ${android_home}

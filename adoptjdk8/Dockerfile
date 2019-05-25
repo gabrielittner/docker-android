@@ -5,12 +5,8 @@ FROM ${SDK_TOOLS_IMAGE} as android-sdk-tools
 
 FROM ${JDK_IMAGE}
 
-LABEL maintainer="gabriel.ittner@gmail.com"
-
 # Install git and openssh-client for CircleCI
-RUN rm -rf /var/lib/apt/lists/* \
-    && apt-get clean \
-    && apt-get update \
+RUN apt-get update \
     && apt-get install -y --no-install-recommends git openssh-client \
     && rm -rf /var/lib/apt/lists/*
 
