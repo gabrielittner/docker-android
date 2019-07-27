@@ -6,7 +6,7 @@ FROM ${SDK_TOOLS_IMAGE} as android-sdk-tools
 FROM ${JDK_IMAGE}
 
 # Android SDK
-ARG android_home=$HOME/android-sdk
+ARG android_home=/android-sdk
 COPY --from=android-sdk-tools /android-sdk ${android_home}
 
 # Set environmental variables

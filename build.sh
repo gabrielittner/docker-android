@@ -9,20 +9,26 @@ TAG_BASE=gabrielittner/android-sdk:tools-${SDK_TOOLS_VERSION}
 TAG_VERSION_SHORT=(
   jdk8
   jdk11
+  jdk12
   adoptjdk8
   adoptjdk11
+  adoptjdk12
 )
 TAG_VERSION_FULL=(
-  jdk8u212
-  jdk11.0.3
-  adoptjdk8u212
-  adoptjdk11.0.3
+  jdk8u222
+  jdk11.0.4
+  jdk12.0.2
+  adoptjdk8u222
+  adoptjdk11.0.4
+  adoptjdk12.0.2
 )
 JDK_IMAGE=(
-  openjdk:8u212-b04-jdk-stretch
-  openjdk:11.0.3-jdk-stretch
-  adoptopenjdk:8u212-b03-jdk-hotspot
-  adoptopenjdk:11.0.3_7-jdk-hotspot
+  openjdk:8u222-jdk-stretch
+  openjdk:11.0.4-jdk-stretch
+  openjdk:12.0.2-jdk
+  adoptopenjdk:8u222-b10-jdk-hotspot
+  adoptopenjdk:11.0.4_11-jdk-hotspot
+  adoptopenjdk:12.0.2_10-jdk-hotspot
 )
 
 SDK_TOOLS_IMAGE=android-sdk-tools-${SDK_TOOLS_VERSION}

@@ -11,7 +11,7 @@ RUN apt-get update \
     && rm -rf /var/lib/apt/lists/*
 
 # Android SDK
-ARG android_home=$HOME/android-sdk
+ARG android_home=/android-sdk
 COPY --from=android-sdk-tools /android-sdk ${android_home}
 
 # Set environmental variables
