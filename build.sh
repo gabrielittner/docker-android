@@ -1,10 +1,10 @@
 #!/bin/bash
 set -e
 
-SDK_TOOLS_VERSION=26.1.1
-SDK_TOOLS_REVISION=4333796
+CMDLINE_TOOLS_VERSION=2.1
+CMDLINE_TOOLS_REVISION=6609375_latest
 
-TAG_BASE=gabrielittner/android-sdk:tools-${SDK_TOOLS_VERSION}
+TAG_BASE=gabrielittner/android-sdk:cmdline-tools-${CMDLINE_TOOLS_VERSION}
 
 TAG_VERSION_SHORT=(
   jdk8
@@ -31,14 +31,14 @@ JDK_IMAGE=(
   adoptopenjdk:14.0.1_7-jdk-hotspot
 )
 
-SDK_TOOLS_IMAGE=android-sdk-tools-${SDK_TOOLS_VERSION}
+CMDLINE_TOOLS_IMAGE=android-cmdline-tools-${CMDLINE_TOOLS_VERSION}
 echo "================================================"
-echo "Building base SDK tools image ${SDK_TOOLS_IMAGE}"
+echo "Building base SDK tools image ${CMDLINE_TOOLS_IMAGE}"
 echo "================================================"
 docker build \
     --pull \
-    --tag ${SDK_TOOLS_IMAGE} \
-    --build-arg SDK_TOOLS_REVISION=${SDK_TOOLS_REVISION} \
+    --tag ${CMDLINE_TOOLS_IMAGE} \
+    --build-arg CMDLINE_TOOLS_REVISION=${CMDLINE_TOOLS_REVISION} \
     sdk-tools
 
 for ((i=0;i<${#JDK_IMAGE[@]};++i)); do
@@ -52,7 +52,7 @@ for ((i=0;i<${#JDK_IMAGE[@]};++i)); do
     docker build \
         --tag ${TAG_SIMPLE} \
         --tag ${TAG_FULL} \
-        --build-arg SDK_TOOLS_IMAGE=${SDK_TOOLS_IMAGE} \
+        --build-arg CMDLINE_TOOLS_IMAGE=${CMDLINE_TOOLS_IMAGE} \
         --build-arg JDK_IMAGE=${JDK_IMAGE[i]} \
         ${TAG_VERSION_SHORT[i]}
 
