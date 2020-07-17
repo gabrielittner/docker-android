@@ -1,8 +1,8 @@
 #!/bin/bash
 set -e
 
-CMDLINE_TOOLS_VERSION=2.1
-CMDLINE_TOOLS_REVISION=6609375_latest
+CMDLINE_TOOLS_VERSION=3.0-beta01
+CMDLINE_TOOLS_REVISION=6604631_latest
 
 TAG_BASE=gabrielittner/android-sdk:cmdline-tools-${CMDLINE_TOOLS_VERSION}
 

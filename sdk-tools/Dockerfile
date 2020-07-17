@@ -16,5 +16,6 @@ ARG CMDLINE_TOOLS_REVISION=none
 ARG sdk_file=commandlinetools-linux-${CMDLINE_TOOLS_REVISION}.zip
 RUN wget -q -O /tmp/${sdk_file} https://dl.google.com/android/repository/${sdk_file}
 RUN unzip -q /tmp/${sdk_file} -d ${android_home}
+RUN mv ${android_home}/cmdline-tools ${android_home}/latest
 RUN mkdir ${android_home}/cmdline-tools
-RUN mv ${android_home}/tools ${android_home}/cmdline-tools/latest
+RUN mv ${android_home}/latest ${android_home}/cmdline-tools/latest
