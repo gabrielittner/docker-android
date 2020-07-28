@@ -2,7 +2,8 @@ FROM alpine:3.8
 
 # Android SDK location
 ARG android_home=/android-sdk
-RUN mkdir -p ${android_home}
+RUN mkdir -p ${android_home}/cmdline-tools
+RUN mkdir -p ${android_home}/licenses
 
 # Accept Android SDK licenses
 RUN mkdir -p ${android_home}/licenses
@@ -12,10 +13,9 @@ ARG sdk_license_preview="84831b9409646a918e30573bab4c9c91346d8abd\n"
 RUN echo -e ${sdk_license_preview} > "${android_home}/licenses/android-sdk-preview-license"
 
 # Download and install Android SDK
+RUN mkdir -p ${android_home}/cmdline-tools
 ARG CMDLINE_TOOLS_REVISION=none
 ARG sdk_file=commandlinetools-linux-${CMDLINE_TOOLS_REVISION}.zip
 RUN wget -q -O /tmp/${sdk_file} https://dl.google.com/android/repository/${sdk_file}
-RUN unzip -q /tmp/${sdk_file} -d ${android_home}
-RUN mv ${android_home}/cmdline-tools ${android_home}/latest
-RUN mkdir ${android_home}/cmdline-tools
-RUN mv ${android_home}/latest ${android_home}/cmdline-tools/latest
+RUN unzip -q /tmp/${sdk_file} -d ${android_home}/cmdline-tools
+RUN mv ${android_home}/cmdline-tools/cmdline-tools ${android_home}/cmdline-tools/latest

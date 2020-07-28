@@ -17,5 +17,5 @@ COPY --from=android-sdk-tools /android-sdk ${android_home}
 # Set environmental variables
 ENV ANDROID_HOME ${android_home}
 ENV ADB_INSTALL_TIMEOUT 120
-ENV PATH=${ANDROID_HOME}/emulator:${ANDROID_HOME}/cmdline-tools/latest:${ANDROID_HOME}/cmdline-tools/latest/bin:${ANDROID_HOME}/platform-tools:${PATH}
+ENV PATH=${ANDROID_HOME}/cmdline-tools/latest/bin:${ANDROID_HOME}/platform-tools:${ANDROID_HOME}/emulator:${PATH}
 ENV TERM dumb
